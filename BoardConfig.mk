@@ -18,18 +18,18 @@
 # device-specific aspects (drivers) with a device-agnostic
 # product configuration (apps).
 #
-DEVICE_PATH := device/motorola/def
+DEVICE_PATH := device/motorola/racer
 
 include $(DEVICE_PATH)/BoardConfigGsi.mk
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RECOVERY := false
 
-TARGET_OTA_ASSERT_DEVICE := MotoOneHyper
+TARGET_OTA_ASSERT_DEVICE := racer
 
-TARGET_BOOTLOADER_BOARD_NAME := sm6150
-TARGET_BOARD_PLATFORM := sm6150
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno612
+TARGET_BOOTLOADER_BOARD_NAME := lito
+TARGET_BOARD_PLATFORM := lito
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno620
 
 # Architecture
 TARGET_ARCH := arm64
@@ -48,7 +48,7 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 TARGET_USES_64_BIT_BINDER := true
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 androidboot.usbcontroller=a600000.dwc3 earlycon=msm_geni_serial,0x880000 loop.max_part=7 printk.devkmsg=on firmware_class.path=/vendor/firmware_mnt/image
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 earlycon=msm_geni_serial,0x888000 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 androidboot.usbcontroller=a600000.dwc3 swiotlb=2048 cgroup.memory=nokmem,nosocket loop.max_part=7 firmware_class.path=/vendor/firmware_mnt/image androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -56,8 +56,8 @@ BOARD_RAMDISK_OFFSET     := 0x01000000
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-TARGET_KERNEL_SOURCE := kernel/motorola/sm6150
-TARGET_KERNEL_CONFIG := vendor/omni_def_defconfig
+TARGET_KERNEL_SOURCE := kernel/motorola/lito
+TARGET_KERNEL_CONFIG := vendor/omni_racer_defconfig
 BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     DTC=$(OUT_DIR)/../device/motorola/def/dtc/dtc
@@ -135,7 +135,7 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
-PRODUCT_SOONG_NAMESPACES += vendor/motorola/def
+PRODUCT_SOONG_NAMESPACES += vendor/motorola/racer
 
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery_dynamic_partition.fstab

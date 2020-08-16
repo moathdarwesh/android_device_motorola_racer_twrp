@@ -78,14 +78,18 @@
     <bool name="config_displayBlanksAfterDoze">false</bool>
     <bool name="skip_restoring_network_selection">true</bool>
     <dimen name="config_viewConfigurationTouchSlop">16dp</dimen>
-    <dimen name="status_bar_height">80px</dimen>
-    <dimen name="status_bar_height_landscape">24dp</dimen>
-    <dimen name="status_bar_height_portrait">80px</dimen>
+    <dimen name="status_bar_height">100.0px</dimen>
+    <dimen name="status_bar_height_landscape">24.0dip</dimen>
+    <dimen name="status_bar_height_portrait">100.0px</dimen>
 
     <integer name="config_multiuserMaximumUsers">4</integer>
-
-    <integer name="config_screenBrightnessSettingDefault">55</integer>
-    <integer name="config_screenBrightnessSettingMinimum">2</integer>
+    <integer name="config_cameraLaunchGestureSensorType">65540</integer>
+    <string name="config_cameraLaunchGestureSensorStringType">com.motorola.sensor.camera_activate</string>
+    <integer name="config_defaultPeakRefreshRate">90</integer>
+    <integer name="config_screenBrightnessDark">1</integer>
+    <integer name="config_screenBrightnessDim">1</integer>
+    <integer name="config_screenBrightnessSettingDefault">68</integer>
+    <integer name="config_screenBrightnessSettingMinimum">1</integer>
 
     <!-- Enable overlay for all location components. -->
     <bool name="config_enableNetworkLocationOverlay" translatable="false">true</bool>
@@ -107,63 +111,46 @@
         <item>A_GLONASS_POS_PROTOCOL_SELECT=0</item>
         <item>GPS_LOCK=0</item>
     </string-array>
-    <string name="config_mms_user_agent">motorolaonehyper</string>
+    <string name="config_mms_user_agent">motorolaedge</string>
     <string name="config_mms_user_agent_profile_url">http://uaprof.motorola.com/phoneconfig/motov1/Profile/motov1.rdf</string>
+    <string name="config_mainBuiltInDisplayCutout">M -980,0 L -914,0 L -914,100 L -980,100 Z @right</string>
     <string name="config_wifi_tcp_buffers">524288,2097152,4194304,262144,524288,1048576</string>
-    <string name="wifi_tether_configure_ssid_default">motorola one hyper</string>
+    <string name="wifi_tether_configure_ssid_default">motorola edge</string>
     <integer name="config_screenBrightnessSettingMaximum">255</integer>
     <bool name="config_allowAutoBrightnessWhileDozing">false</bool>
-   <array name="config_autoBrightnessDisplayValuesNits">
-        <item>3</item>
-        <item>32</item>
-        <item>70</item>
-        <item>110</item>
-        <item>130</item>
-        <item>150</item>
-        <item>180</item>
-        <item>180</item>
-        <item>180</item>
-        <item>180</item>
-        <item>225</item>
-        <item>270</item>
-        <item>300</item>
-        <item>315</item>
+    <integer-array name="config_autoBrightnessDisplayValuesNits">
+        <item>2</item>
+        <item>10</item>
+        <item>20</item>
+        <item>80</item>
+        <item>93</item>
+        <item>125</item>
+        <item>161</item>
+        <item>212</item>
         <item>420</item>
-        <item>450</item>
-        <item>450</item>
-        <item>450</item>
-    </array>
+    </integer-array>
     <integer-array name="config_autoBrightnessLevels">
         <item>5</item>
         <item>10</item>
-        <item>50</item>
-        <item>90</item>
+        <item>40</item>
         <item>100</item>
-        <item>150</item>
-        <item>200</item>
-        <item>300</item>
-        <item>400</item>
-        <item>500</item>
-        <item>800</item>
-        <item>1000</item>
-        <item>1300</item>
-        <item>2000</item>
-        <item>3000</item>
-        <item>4000</item>
-        <item>8000</item>
+        <item>325</item>
+        <item>1250</item>
+        <item>3500</item>
+        <item>5500</item>
     </integer-array>
     <integer-array name="config_availableColorModes">
-        <item>@null</item>
+        <item>0</item>
         <item>1</item>
         <item>2</item>
     </integer-array>
     <string-array name="config_defaultPinnerServiceFiles">
-        <item>/system/framework/arm/boot-framework.oat</item>
+        <item>/system/framework/arm64/boot-framework.oat</item>
         <item>/system/framework/framework.jar</item>
-        <item>/system/framework/oat/arm/services.odex</item>
+        <item>/system/framework/oat/arm64/services.odex</item>
         <item>/system/framework/services.jar</item>
-        <item>/system/framework/arm/boot.oat</item>
-        <item>/system/framework/arm/boot-core-libart.oat</item>
+        <item>/system/framework/arm64/boot.oat</item>
+        <item>/system/framework/arm64/boot-core-libart.oat</item>
         <item>/apex/com.android.runtime/javalib/core-oj.jar</item>
         <item>/apex/com.android.runtime/javalib/core-libart.jar</item>
         <item>/apex/com.android.media/javalib/updatable-media.jar</item>
@@ -196,18 +183,15 @@
     </string-array>
 
     <integer-array name="config_screenBrightnessBacklight">
-        <item>2</item>
-        <item>18</item>
-        <item>39</item>
-        <item>61</item>
-        <item>72</item>
-        <item>83</item>
-        <item>100</item>
-        <item>125</item>
-        <item>150</item>
-        <item>166</item>
-        <item>175</item>
-        <item>233</item>
+        <item>0</item>
+        <item>1</item>
+        <item>8</item>
+        <item>12</item>
+        <item>48</item>
+        <item>56</item>
+        <item>78</item>
+        <item>99</item>
+        <item>122</item>
         <item>255</item>
     </integer-array>
     <array name="config_screenBrightnessNits">
@@ -237,6 +221,7 @@
     </string-array>
 
     <integer-array name="config_tether_upstream_types">
+        <item>0</item>
         <item>1</item>
         <item>5</item>
         <item>7</item>
@@ -247,10 +232,11 @@
     <string-array name="config_tether_wifi_regexs">
         <item>wigig0</item>
         <item>wlan0</item>
+        <item>wlan1</item>
         <item>softap0</item>
     </string-array>
     <integer-array name="config_virtualKeyVibePattern">
-        <item>@null</item>
+        <item>0</item>
         <item>28</item>
     </integer-array>
     <string-array name="networkAttributes">
@@ -265,7 +251,7 @@
         <item>mobile_cbs,12,0,2,60000,true</item>
         <item>bluetooth,7,7,2,-1,true</item>
         <item>mobile_emergency,15,0,5,-1,true</item>
-        <item>ethernet,9,9,3,-1,true</item>
+        <item>ethernet,9,9,9,-1,true</item>
     </string-array>
     <string-array name="radioAttributes">
         <item>1,1</item>

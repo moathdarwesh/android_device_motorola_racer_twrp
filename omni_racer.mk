@@ -73,7 +73,7 @@ BOARD_USES_RECOVERY_AS_BOOT := false
 TARGET_BOOTANIMATION_SIZE := 1080p
 AB_OTA_UPDATER := true
 
-DEVICE_PACKAGE_OVERLAYS += device/motorola/def/overlay/device
+DEVICE_PACKAGE_OVERLAYS += device/motorola/racer/overlay/device
 DEVICE_PACKAGE_OVERLAYS += vendor/omni/overlay/CarrierConfig
 
 # Inherit from our custom product configuration
@@ -83,30 +83,37 @@ $(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/mainline_system_arm64.mk)
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/motorola/def/device.mk)
+$(call inherit-product, device/motorola/racer/device.mk)
 
 PRODUCT_SHIPPING_API_LEVEL := 29
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := omni_def
-PRODUCT_DEVICE := def
+PRODUCT_NAME := omni_racer
+PRODUCT_DEVICE := racer
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
-PRODUCT_MODEL := motorola one hyper
+PRODUCT_MODEL := motorola edge
 
-TARGET_DEVICE := MotoOneHyper
-PRODUCT_SYSTEM_NAME := MotoOneHyper
+TARGET_DEVICE := racer
+PRODUCT_SYSTEM_NAME := racer
 
-VENDOR_RELEASE := 10/QPF30.103-21-1/3932d:user/release-keys
+# USB debugging
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.usb.config=mtp,adb \
+    ro.adb.secure=0 \
+    ro.secure=0 \
+    ro.debuggable=1
+
+VENDOR_RELEASE := 10/QPD30.70-58/f829a:user/release-keys
 BUILD_FINGERPRINT := motorola/def_retail/def:$(VENDOR_RELEASE)
-OMNI_BUILD_FINGERPRINT := motorola/def_retail/def:$(VENDOR_RELEASE)
-OMNI_PRIVATE_BUILD_DESC := "'def_retail-user 10 QPF30.103-21-1 3932d release-keys'"
+OMNI_BUILD_FINGERPRINT := motorola/racer_retail/racer:$(VENDOR_RELEASE)
+OMNI_PRIVATE_BUILD_DESC := "'racer_retail-user 10 QPD30.70-58 f829a release-keys'"
 
-PLATFORM_SECURITY_PATCH_OVERRIDE := 2019-10-05
+PLATFORM_SECURITY_PATCH_OVERRIDE := 2020-06-01
 
 TARGET_VENDOR := motorola
 
-$(call inherit-product, vendor/motorola/def/def-vendor.mk)
+$(call inherit-product, vendor/motorola/racer/racer-vendor.mk)
 
 ifeq ($(WITH_GAPPS),true)
 # https://gitlab.com/darkobas/android_vendor_gapps
