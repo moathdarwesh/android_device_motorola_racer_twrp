@@ -201,8 +201,8 @@ TW_THEME := portrait_hdpi
 TW_USE_TOOLBOX := true
 
 # Notch Offset
-TW_Y_OFFSET := 89
-TW_H_OFFSET := -89
+# TW_Y_OFFSET := 89
+# TW_H_OFFSET := -89
 
 # TWRP Debug Flags
 TWRP_INCLUDE_LOGCAT := true
