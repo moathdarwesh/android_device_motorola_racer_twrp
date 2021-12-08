@@ -27,8 +27,8 @@ See /prebuilt/README.md
 ```sh
 . build/envsetup.sh
 export LC_ALL=C
-lunch omni_racer-eng
-make -j4 recoveryimage
+lunch twrp_racer-eng
+mka adbd -j$(nproc --all) recoveryimage
 ```
 
 ### Build with TWRP installer
