@@ -2,9 +2,9 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ "android-10.0" ]
+    branches: [ "android-11.0" ]
   pull_request:
-    branches: [ "android-10.0" ]
+    branches: [ "android-14.0" ]
 
 jobs:
   build:
